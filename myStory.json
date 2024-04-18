@@ -1,0 +1,361 @@
+{
+    "Title": "Sock Scavenger",
+    "Credits": "Created by Cynthia He (che262@ucsc.edu) using Adam Smith's engine as base",
+    "InitialLocation": "Shop",
+    "Locations": {
+        "Shop": {
+            "Body": "Welcome to the sock shop! Here is where the most fabulous, one of a kind socks are sold! Unfortunately we are running out of socks and scavenge for more!",
+            "Choices": [
+                {
+                    "Text": "Into the pipes",
+                    "Target": "Pipes"
+                }
+            ],
+            "Hidden" : [
+                {
+                    "Text": "Present the socks acquired",
+                    "Target": "Ending"
+                }
+            ]
+        },
+        "Pipes": {
+            "Body": "It's quite dark here but safe and comfy. These are the pipes of an apartment",
+            "Choices": [
+                {
+                    "Text": "Back to Shop",
+                    "Target": "Shop"
+                },
+                {
+                    "Text": "Onwards!",
+                    "Target": "Son Bathroom"
+                }
+            ]
+        },
+        "Son Bathroom": {
+            "Body": "You emerge in a squeaky clean bathroom.",
+            "Choices": [
+                {
+                    "Text": "Back through pipes",
+                    "Target": "Pipes"
+                },
+                {
+                    "Text": "Leave bathroom",
+                    "Target": "Son Bedroom"
+                }
+            ]
+        },
+        "Son Bedroom": {
+            "Body": "A neat and clean human resting area though it seems there hasn't been one here for a while.",
+            "Choices": [
+                {
+                    "Text": "To bathroom",
+                    "Target": "Son Bathroom"
+                },
+                {
+                    "Text": "Enter Air Vents",
+                    "Target": "Vents"
+                },
+                {
+                    "Text": "Check out photo",
+                    "Target": "Halloween Photo",
+                    "Key" : "Halloween"
+                },
+                {
+                    "Text": "Enter the Closet",
+                    "Target": "Son Closet"
+                },
+                {
+                    "Text": "Enter the Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Halloween Photo" : {
+            "Body" : "A photo of a family of 3 humans(?). They all look like humans but with bright colors, strange distortions and extra appendages.\nYou notice one of these humans(?) has what looks like a pair of shiny silver and blue socks on.\nThose seem like a prize worth bringing back.",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the bedroom",
+                    "Target" : "Son Bedroom"
+                }
+            ]
+        },
+        "Son Closet" : {
+            "Body" : "In the closet, you see a slight dusty drawer and a shelf with all sorts garments.",
+            "Choices" : [
+                {
+                    "Text" : "Check drawer",
+                    "Target" : "Son Regular Sock",
+                    "Sock" : "Son Regular Sock"
+                },
+                {
+                    "Text" : "Continue exploring the bedroom",
+                    "Target" : "Son Bedroom"
+                }
+            ],
+            "Hidden" : [
+                {
+                    "Text" : "Examine silver glint on the top shelf",
+                    "Target" : "Son Halloween Sock",
+                    "Sock" : "Son Halloween Sock"
+                }
+            ],
+            "Hidden_Unlock_Key" : "Halloween"
+        },
+        "Son Regular Sock" : {
+            "Body" : "You dig up a white and grey sock. It's well worn fabric could be used in the sock shop. You pick it up and bring it with you.",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the closet",
+                    "Target" : "Son Closet"
+                }
+            ]
+        },
+        "Son Halloween Sock" : {
+            "Body" : "After much scampering, you manage to reach the top of the shelf. There you find your hard earned prize. A silver and blue mech sock.\nYou carefully add it to your collection",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the closet",
+                    "Target" : "Son Closet"
+                }
+            ]
+        },
+        "Vents": {
+            "Body": "These vents are dry, spacious and warm. They also connect to many other parts of the apartment.\n It seems you can squeeze through one of them into another room.",
+            "Choices": [
+                {
+                    "Text": "Return to the bedroom",
+                    "Target": "Son Bedroom"
+                },
+                {
+                    "Text": "Squeeze through vent",
+                    "Target": "Countertop"
+                },
+                {
+                    "Text": "Peek at other rooms",
+                    "Target": "Peek"
+                }
+            ]
+        },
+        "Peek" : {
+            "Body" : "You see an older female human folding a basket of laundry. While she folds, a white sock with pink flowers catches your eye.",
+            "Body2": "Empty Room",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the vents",
+                    "Target" : "Vents"
+                }
+            ]
+        },
+        "Countertop": {
+            "Body": "The smell of food is everywhere on these flat floating islands. You see bowls, plates and utensils neatly stacked up on a rack, a strange sock(?) and a note.",
+            "Choices": [
+                {
+                    "Text": "Return through the air vents",
+                    "Target": "Vents"
+                },
+                {
+                    "Text": "Pick up sock(?)",
+                    "Target": "Oven Mitt"
+                },
+                {
+                    "Text": "Read note left on table",
+                    "Target": "Dog Note",
+                    "Key" : "Distraction"
+                }
+            ]
+        },
+        "Oven Mitt": {
+            "Body": "This strange sock is thick and heavy. It is well insulated in the inside.\n You pick it up and attempt to bring it with you but it is too bulky",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the countertop",
+                    "Target": "Countertop"
+                }
+            ]
+        },
+        "Dog Note": {
+            "Body": "The note is scribbled in a loopy hand writing detailing instructions on how to take care of the dog.\n Sribbled on the bottom of the note, it says \"PS: Gary usually scratches the table posts when he wants to go out. Thank you so much!\"",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the countertop",
+                    "Target": "Countertop"
+                }
+            ]
+        },
+        "Hallway" : {
+            "Body" : "You scamper down the long and narrow hall way. As you scurry, you notice a strange cloth bit sticking out from a corner.",
+            "Choices" : [
+                {
+                    "Text" : "Return to the bedroom",
+                    "Target" : "Son Bedroom"
+                },
+                {
+                    "Text" : "Examine strange cloth bit",
+                    "Target" : "Ancient Sock",
+                    "Sock" : "Ancient Sock"
+                },
+                {
+                    "Text" : "Continue down the hallway",
+                    "Target" : "Kitchen Floor"
+                }
+            ]
+        },
+        "Ancient Sock": {
+            "Body": "You find an old dusty orange sock. You pick it up and bring it with you.",
+            "Choices": [
+                {
+                    "Text": "Go back to the hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Kitchen Floor": {
+            "Body": "Here you are down at the kitchen floor",
+            "Choices": [
+                {
+                    "Text": "Scamper into the living room",
+                    "Target": "Living Room",
+                    "Blocked": "Dog Encounter",
+                    "Target_Key": "No Dog"
+                },
+                {
+                    "Text": "Go back to the hallway",
+                    "Target": "Hallway"
+                }
+            ],
+            "Hidden" : [
+                {
+                    "Text": "Distract dog",
+                    "Target": "Dog Distraction",
+                    "Key" : "No Dog"
+                }
+            ],
+            "Hidden_Unlock_Key" : "Distraction"
+        },
+        "Dog Encounter": {
+            "Body": "You attempt to scamper into the living room but the dog notices your footsteps and gives chase!\n The dog chases you all around the floor until you find a safe crevice to hide in.\n The dog stares at the for a while before getting bored and returning to it's bed.",
+            "Choices": [
+                {
+                    "Text": "Sneak back out to the kitchen floor",
+                    "Flavor": "You manage to leave stealthly without the dog noticing.",
+                    "Target": "Kitchen Floor"
+                }
+            ]
+        },
+        "Dog Distraction": {
+            "Body": "You start scratching the table post as loud as you can. As you do so, the dog lying in the living room runs over to see the source of the noise.\n You disapear into a crevice and watch as the older human appears to check on the noise. \"Gary do you want to go on another walk today?\"\n\"Well I suppose I could use some fresh air to clear my thoughts\"\nThe human picks up a leash, clips it on the dog and leaves the apartment.",
+            "Choices": [
+                {
+                    "Text": "Scamper back out",
+                    "Target": "Kitchen Floor"
+                }
+            ]
+        },
+        "Living Room": {
+            "Body": "At the Living Room",
+            "Choices": [
+                {
+                    "Text": "Go to the room on the other side",
+                    "Target": "Parents Bedroom"
+                },
+                {
+                    "Text": "Examine purple lump",
+                    "Target": "Friend Sock"
+                },
+                {
+                    "Text": "Return to kitchen",
+                    "Target": "Kitchen Floor"
+                }
+            ]
+        },
+        "Friend Sock": {
+            "Body": "You find a purple sock with small white stars all over it. You add it to your collection.",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the living room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Parents Bedroom": {
+            "Body": "At Parents bedroom",
+            "Choices": [
+                {
+                    "Text": "Examine the closet",
+                    "Target": "Parents Closet"
+                },
+                {
+                    "Text": "Check out letter on desk",
+                    "Target": "Dad Evidence",
+                    "Key" : "Dad"
+                },
+                {
+                    "Text": "Examine laundry basket",
+                    "Target": "Mom Sock",
+                    "Sock" : "Mom Sock"
+                },
+                {
+                    "Text": "Return to living room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Mom Sock": {
+            "Body": "You pick up the flower patterned sock and add it to your collection",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the bedroom",
+                    "Target": "Parents Bedroom"
+                }
+            ]
+        },
+        "Dad Evidence": {
+            "Body": "The letter details another human's latest business trip. Apparently the human forgot to take their favorite pair of thick woolen socks with them for the snow.",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the bedroom",
+                    "Target": "Parents Bedroom"
+                }
+            ]
+        },
+        "Parents Closet": {
+            "Body": "This closet is much bigger than the first closet you saw. It was many drawers, half neat but the other half slightly dusty.",
+            "Choices": [
+                {
+                    "Text": "Squeeze behind drawer",
+                    "Target": "Mom Special Sock"
+                },
+                {
+                    "Text": "Leave the closet",
+                    "Target": "Parents Bedroom"
+                }
+            ],
+            "Hidden" : [
+                {
+                    "Text": "Wiggle into the other dusty drawer",
+                    "Target": "Dad Sock",
+                    "Sock" : "Dad Sock"
+                }
+            ],
+            "Hidden_Unlock_Key" : "Dad"
+        },
+        "Dad Sock": {
+            "Body": "You find a thick pair of woolen long socks. You pick one up and add it to your collection",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the closet",
+                    "Target": "Parents Closet"
+                }
+            ]
+        },
+        "Mom Special Sock": {
+            "Body": "Here you find a thin, almost see through silky sock. It feel smooth yet delicate. You pick it up and add it to your collection.",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the closet",
+                    "Target": "Parents Closet"
+                }
+            ]
+        }
+    }
+}
