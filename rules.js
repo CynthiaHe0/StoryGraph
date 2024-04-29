@@ -1,3 +1,7 @@
+var keys = {};
+var socks = {};
+//So append a letter for each sock. Use switch-case to 
+//add flavor text for the ending?
 class Start extends Scene {
     create() {
         this.engine.setTitle(this.engine.storyData.Title); // TODO: replace this text using this.engine.storyData to find the story title
@@ -11,15 +15,28 @@ class Start extends Scene {
 
 class Location extends Scene {
     create(key) {
-        //console.log(typeof(key.Choices));
+        //console.log(socks);
+        //console.log(keys);
         let locationData = this.engine.storyData.Locations[key]; // TODO: use `key` to get the data object for the current story location
         this.engine.show(locationData.Body); // TODO: replace this text by the Body of the location data
         
         if(locationData.Choices) { // TODO: check if the location has any Choices
-            for(let choice of locationData.Choices) { // TODO: loop over the location's Choices
-                //console.log(choice);
-                this.engine.addChoice(choice.Text, choice); // TODO: use the Text of the choice
-                // TODO: add a useful second argument to addChoice so that the current code of handleChoice below works
+            for(let choice of locationData.Choices) { 
+                if (choice.Sock){
+                    if (socks[choice.Sock] == true){
+                        continue;
+                    }
+                }
+                this.engine.addChoice(choice.Text, choice);
+            }
+            if(locationData.Hidden && keys[locationData.Hidden_Unlock_Key]){
+                if (locationData.Hidden[0].Sock && socks[locationData.Hidden[0].Sock] != true){
+                    this.engine.addChoice(locationData.Hidden[0].Text, locationData.Hidden[0]);
+                } else if (locationData.Hidden[0].Key && keys[locationData.Hidden[0].Key] != true){
+                    console.log(locationData.Hidden[0].Key);
+                    console.log(keys);
+                    this.engine.addChoice(locationData.Hidden[0].Text, locationData.Hidden[0]);
+                }
             }
         } else {
             this.engine.addChoice("The end.")
@@ -28,12 +45,24 @@ class Location extends Scene {
     handleChoice(choice) {
         if(choice) {
             this.engine.show("&gt; "+choice.Text);
-            this.engine.gotoScene(Location, choice.Target);
+            if (choice.Key){
+                keys[choice.Key] = true;
+            }
+            if (choice.Sock){
+                socks[choice.Sock] = true;
+            }
+            if (choice.Blocked && keys[choice.Target_Key] == null){
+                this.engine.gotoScene(Location, choice.Blocked);
+            } else {
+                this.engine.gotoScene(Location, choice.Target);
+            }
         } else {
             this.engine.gotoScene(End);
         }
     }
 }
+
+
 
 class End extends Scene {
     create() {

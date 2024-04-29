@@ -4,11 +4,17 @@
     "InitialLocation": "Shop",
     "Locations": {
         "Shop": {
-            "Body": "Here is where the most fabulous, one of a kind socks are sold!",
+            "Body": "Welcome to the sock shop! Here is where the most fabulous, one of a kind socks are sold! Unfortunately we are running out of socks and scavenge for more!",
             "Choices": [
                 {
                     "Text": "Into the pipes",
                     "Target": "Pipes"
+                }
+            ],
+            "Hidden" : [
+                {
+                    "Text": "Present the socks acquired",
+                    "Target": "Ending"
                 }
             ]
         },
@@ -26,7 +32,7 @@
             ]
         },
         "Son Bathroom": {
-            "Body": "INSERT DESCRIPTION OF BATHROOM HERE and the cool pipework",
+            "Body": "You emerge in a squeaky clean bathroom.",
             "Choices": [
                 {
                     "Text": "Back through pipes",
@@ -51,7 +57,8 @@
                 },
                 {
                     "Text": "Check out photo",
-                    "Target": "Halloween Photo"
+                    "Target": "Halloween Photo",
+                    "Key" : "Halloween"
                 },
                 {
                     "Text": "Enter the Closet",
@@ -64,7 +71,7 @@
             ]
         },
         "Halloween Photo" : {
-            "Body" : "A photo of the family that inhabits this space. They all look like slightly like humans but with strange distortions.",
+            "Body" : "A photo of a family of 3 humans(?). They all look like humans but with bright colors, strange distortions and extra appendages.\nYou notice one of these humans(?) has what looks like a pair of shiny silver and blue socks on.\nThose seem like a prize worth bringing back.",
             "Choices" : [
                 {
                     "Text" : "Continue exploring the bedroom",
@@ -73,24 +80,29 @@
             ]
         },
         "Son Closet" : {
-            "Body" : "You see all the pieces of cloth hanging around and instantly know you are in the right place.",
+            "Body" : "In the closet, you see a slight dusty drawer and a shelf with all sorts garments.",
             "Choices" : [
                 {
                     "Text" : "Check drawer",
-                    "Target" : "Son Regular Sock"
-                },
-                {
-                    "Text" : "Examine silver glint on the top shelf",
-                    "Target" : "Son Halloween Sock"
+                    "Target" : "Son Regular Sock",
+                    "Sock" : "Son Regular Sock"
                 },
                 {
                     "Text" : "Continue exploring the bedroom",
                     "Target" : "Son Bedroom"
                 }
-            ]
+            ],
+            "Hidden" : [
+                {
+                    "Text" : "Examine silver glint on the top shelf",
+                    "Target" : "Son Halloween Sock",
+                    "Sock" : "Son Halloween Sock"
+                }
+            ],
+            "Hidden_Unlock_Key" : "Halloween"
         },
         "Son Regular Sock" : {
-            "Body" : "You dig up a white and grey sock. It's well worn fabric should interest some customers.",
+            "Body" : "You dig up a white and grey sock. It's well worn fabric could be used in the sock shop. You pick it up and bring it with you.",
             "Choices" : [
                 {
                     "Text" : "Continue exploring the closet",
@@ -99,7 +111,7 @@
             ]
         },
         "Son Halloween Sock" : {
-            "Body" : "After much scampering, you manage to reach the top of the shelf. There you find your hard earned prize. A silver and blue mech sock.",
+            "Body" : "After much scampering, you manage to reach the top of the shelf. There you find your hard earned prize. A silver and blue mech sock.\nYou carefully add it to your collection",
             "Choices" : [
                 {
                     "Text" : "Continue exploring the closet",
@@ -108,14 +120,14 @@
             ]
         },
         "Vents": {
-            "Body": "These vents are dry, spacious and warm. They also connect to many other parts of the apartment.",
+            "Body": "These vents are dry, spacious and warm. They also connect to many other parts of the apartment.\n It seems you can squeeze through one of them into another room.",
             "Choices": [
                 {
                     "Text": "Return to the bedroom",
                     "Target": "Son Bedroom"
                 },
                 {
-                    "Text": "To kitchen countertop",
+                    "Text": "Squeeze through vent",
                     "Target": "Countertop"
                 },
                 {
@@ -125,7 +137,8 @@
             ]
         },
         "Peek" : {
-            "Body" : "INSERT PEEK TEXT",
+            "Body" : "You see an older female human folding a basket of laundry. While she folds, a white sock with pink flowers catches your eye.",
+            "Body2": "Empty Room",
             "Choices" : [
                 {
                     "Text" : "Continue exploring the vents",
@@ -134,7 +147,7 @@
             ]
         },
         "Countertop": {
-            "Body": "The smell of food is everywhere on these flat floating islands",
+            "Body": "The smell of food is everywhere on these flat floating islands. You see bowls, plates and utensils neatly stacked up on a rack, a strange sock(?) and a note.",
             "Choices": [
                 {
                     "Text": "Return through the air vents",
@@ -146,7 +159,8 @@
                 },
                 {
                     "Text": "Read note left on table",
-                    "Target": "Dog Note"
+                    "Target": "Dog Note",
+                    "Key" : "Distraction"
                 }
             ]
         },
@@ -160,7 +174,7 @@
             ]
         },
         "Dog Note": {
-            "Body": "The note is scribbled in a loopy hand writing detailing instructions on how to take care of the dog.\n Sribbled on the bottom of the note, it says \"PS: Gary usually scratches the table posts when he wants to go out\"",
+            "Body": "The note is scribbled in a loopy hand writing detailing instructions on how to take care of the dog.\n Sribbled on the bottom of the note, it says \"PS: Gary usually scratches the table posts when he wants to go out. Thank you so much!\"",
             "Choices": [
                 {
                     "Text": "Continue exploring the countertop",
@@ -177,7 +191,8 @@
                 },
                 {
                     "Text" : "Examine strange cloth bit",
-                    "Target" : "Ancient Sock"
+                    "Target" : "Ancient Sock",
+                    "Sock" : "Ancient Sock"
                 },
                 {
                     "Text" : "Continue down the hallway",
@@ -198,21 +213,37 @@
             "Body": "Here you are down at the kitchen floor",
             "Choices": [
                 {
-                    "Text": "Distract dog",
-                    "Target": "Dog Distraction"
-                },
-                {
                     "Text": "Scamper into the living room",
-                    "Target": "Living Room"
+                    "Target": "Living Room",
+                    "Blocked": "Dog Encounter",
+                    "Target_Key": "No Dog"
                 },
                 {
                     "Text": "Go back to the hallway",
                     "Target": "Hallway"
                 }
+            ],
+            "Hidden" : [
+                {
+                    "Text": "Distract dog",
+                    "Target": "Dog Distraction",
+                    "Key" : "No Dog"
+                }
+            ],
+            "Hidden_Unlock_Key" : "Distraction"
+        },
+        "Dog Encounter": {
+            "Body": "You attempt to scamper into the living room but the dog notices your footsteps and gives chase!\n The dog chases you all around the floor until you find a safe crevice to hide in.\n The dog stares at the for a while before getting bored and returning to it's bed.",
+            "Choices": [
+                {
+                    "Text": "Sneak back out to the kitchen floor",
+                    "Flavor": "You manage to leave stealthly without the dog noticing.",
+                    "Target": "Kitchen Floor"
+                }
             ]
         },
         "Dog Distraction": {
-            "Body": "Mom takes dog out for a walk",
+            "Body": "You start scratching the table post as loud as you can. As you do so, the dog lying in the living room runs over to see the source of the noise.\n You disapear into a crevice and watch as the older human appears to check on the noise. \"Gary do you want to go on another walk today?\"\n\"Well I suppose I could use some fresh air to clear my thoughts\"\nThe human picks up a leash, clips it on the dog and leaves the apartment.",
             "Choices": [
                 {
                     "Text": "Scamper back out",
@@ -238,7 +269,7 @@
             ]
         },
         "Friend Sock": {
-            "Body": "Purple Socks",
+            "Body": "You find a purple sock with small white stars all over it. You add it to your collection.",
             "Choices": [
                 {
                     "Text": "Continue exploring the living room",
@@ -255,11 +286,13 @@
                 },
                 {
                     "Text": "Check out letter on desk",
-                    "Target": "Dad Evidence"
+                    "Target": "Dad Evidence",
+                    "Key" : "Dad"
                 },
                 {
                     "Text": "Examine laundry basket",
-                    "Target": "Mom Sock"
+                    "Target": "Mom Sock",
+                    "Sock" : "Mom Sock"
                 },
                 {
                     "Text": "Return to living room",
@@ -268,7 +301,7 @@
             ]
         },
         "Mom Sock": {
-            "Body": "Nice flower patterned sock",
+            "Body": "You pick up the flower patterned sock and add it to your collection",
             "Choices": [
                 {
                     "Text": "Continue exploring the bedroom",
@@ -277,7 +310,7 @@
             ]
         },
         "Dad Evidence": {
-            "Body": "INSERT STUFFF",
+            "Body": "The letter details another human's latest business trip. Apparently the human forgot to take their favorite pair of thick woolen socks with them for the snow.",
             "Choices": [
                 {
                     "Text": "Continue exploring the bedroom",
@@ -286,24 +319,28 @@
             ]
         },
         "Parents Closet": {
-            "Body": "PAREBT CKOSEfgruw",
+            "Body": "This closet is much bigger than the first closet you saw. It was many drawers, half neat but the other half slightly dusty.",
             "Choices": [
                 {
                     "Text": "Squeeze behind drawer",
                     "Target": "Mom Special Sock"
                 },
                 {
-                    "Text": "Wiggle into the other dusty drawer",
-                    "Target": "Dad Sock"
-                },
-                {
                     "Text": "Leave the closet",
                     "Target": "Parents Bedroom"
                 }
-            ]
+            ],
+            "Hidden" : [
+                {
+                    "Text": "Wiggle into the other dusty drawer",
+                    "Target": "Dad Sock",
+                    "Sock" : "Dad Sock"
+                }
+            ],
+            "Hidden_Unlock_Key" : "Dad"
         },
         "Dad Sock": {
-            "Body": "INSERT STUFFF",
+            "Body": "You find a thick pair of woolen long socks. You pick one up and add it to your collection",
             "Choices": [
                 {
                     "Text": "Continue exploring the closet",
@@ -312,7 +349,7 @@
             ]
         },
         "Mom Special Sock": {
-            "Body": "INSERT STUFFF",
+            "Body": "Here you find a thin, almost see through silky sock. It feel smooth yet delicate. You pick it up and add it to your collection.",
             "Choices": [
                 {
                     "Text": "Continue exploring the closet",
