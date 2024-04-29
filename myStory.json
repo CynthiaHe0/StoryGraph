@@ -1,58 +1,324 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "Sock Scavenger",
+    "Credits": "Created by Cynthia He (che262@ucsc.edu) using Adam Smith's engine as base",
+    "InitialLocation": "Shop",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Shop": {
+            "Body": "Here is where the most fabulous, one of a kind socks are sold!",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Porter"
+                    "Text": "Into the pipes",
+                    "Target": "Pipes"
                 }
             ]
         },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
+        "Pipes": {
+            "Body": "It's quite dark here but safe and comfy. These are the pipes of an apartment",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "Back to Shop",
+                    "Target": "Shop"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Text": "Onwards!",
+                    "Target": "Son Bathroom"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+        "Son Bathroom": {
+            "Body": "INSERT DESCRIPTION OF BATHROOM HERE and the cool pipework",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Back through pipes",
+                    "Target": "Pipes"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "Leave bathroom",
+                    "Target": "Son Bedroom"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "Son Bedroom": {
+            "Body": "A neat and clean human resting area though it seems there hasn't been one here for a while.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
+                    "Text": "To bathroom",
+                    "Target": "Son Bathroom"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Enter Air Vents",
+                    "Target": "Vents"
+                },
+                {
+                    "Text": "Check out photo",
+                    "Target": "Halloween Photo"
+                },
+                {
+                    "Text": "Enter the Closet",
+                    "Target": "Son Closet"
+                },
+                {
+                    "Text": "Enter the Hallway",
+                    "Target": "Hallway"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "Halloween Photo" : {
+            "Body" : "A photo of the family that inhabits this space. They all look like slightly like humans but with strange distortions.",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the bedroom",
+                    "Target" : "Son Bedroom"
+                }
+            ]
+        },
+        "Son Closet" : {
+            "Body" : "You see all the pieces of cloth hanging around and instantly know you are in the right place.",
+            "Choices" : [
+                {
+                    "Text" : "Check drawer",
+                    "Target" : "Son Regular Sock"
+                },
+                {
+                    "Text" : "Examine silver glint on the top shelf",
+                    "Target" : "Son Halloween Sock"
+                },
+                {
+                    "Text" : "Continue exploring the bedroom",
+                    "Target" : "Son Bedroom"
+                }
+            ]
+        },
+        "Son Regular Sock" : {
+            "Body" : "You dig up a white and grey sock. It's well worn fabric should interest some customers.",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the closet",
+                    "Target" : "Son Closet"
+                }
+            ]
+        },
+        "Son Halloween Sock" : {
+            "Body" : "After much scampering, you manage to reach the top of the shelf. There you find your hard earned prize. A silver and blue mech sock.",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the closet",
+                    "Target" : "Son Closet"
+                }
+            ]
+        },
+        "Vents": {
+            "Body": "These vents are dry, spacious and warm. They also connect to many other parts of the apartment.",
+            "Choices": [
+                {
+                    "Text": "Return to the bedroom",
+                    "Target": "Son Bedroom"
+                },
+                {
+                    "Text": "To kitchen countertop",
+                    "Target": "Countertop"
+                },
+                {
+                    "Text": "Peek at other rooms",
+                    "Target": "Peek"
+                }
+            ]
+        },
+        "Peek" : {
+            "Body" : "INSERT PEEK TEXT",
+            "Choices" : [
+                {
+                    "Text" : "Continue exploring the vents",
+                    "Target" : "Vents"
+                }
+            ]
+        },
+        "Countertop": {
+            "Body": "The smell of food is everywhere on these flat floating islands",
+            "Choices": [
+                {
+                    "Text": "Return through the air vents",
+                    "Target": "Vents"
+                },
+                {
+                    "Text": "Pick up sock(?)",
+                    "Target": "Oven Mitt"
+                },
+                {
+                    "Text": "Read note left on table",
+                    "Target": "Dog Note"
+                }
+            ]
+        },
+        "Oven Mitt": {
+            "Body": "This strange sock is thick and heavy. It is well insulated in the inside.\n You pick it up and attempt to bring it with you but it is too bulky",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the countertop",
+                    "Target": "Countertop"
+                }
+            ]
+        },
+        "Dog Note": {
+            "Body": "The note is scribbled in a loopy hand writing detailing instructions on how to take care of the dog.\n Sribbled on the bottom of the note, it says \"PS: Gary usually scratches the table posts when he wants to go out\"",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the countertop",
+                    "Target": "Countertop"
+                }
+            ]
+        },
+        "Hallway" : {
+            "Body" : "You scamper down the long and narrow hall way. As you scurry, you notice a strange cloth bit sticking out from a corner.",
+            "Choices" : [
+                {
+                    "Text" : "Return to the bedroom",
+                    "Target" : "Son Bedroom"
+                },
+                {
+                    "Text" : "Examine strange cloth bit",
+                    "Target" : "Ancient Sock"
+                },
+                {
+                    "Text" : "Continue down the hallway",
+                    "Target" : "Kitchen Floor"
+                }
+            ]
+        },
+        "Ancient Sock": {
+            "Body": "You find an old dusty orange sock. You pick it up and bring it with you.",
+            "Choices": [
+                {
+                    "Text": "Go back to the hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Kitchen Floor": {
+            "Body": "Here you are down at the kitchen floor",
+            "Choices": [
+                {
+                    "Text": "Distract dog",
+                    "Target": "Dog Distraction"
+                },
+                {
+                    "Text": "Scamper into the living room",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Go back to the hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Dog Distraction": {
+            "Body": "Mom takes dog out for a walk",
+            "Choices": [
+                {
+                    "Text": "Scamper back out",
+                    "Target": "Kitchen Floor"
+                }
+            ]
+        },
+        "Living Room": {
+            "Body": "At the Living Room",
+            "Choices": [
+                {
+                    "Text": "Go to the room on the other side",
+                    "Target": "Parents Bedroom"
+                },
+                {
+                    "Text": "Examine purple lump",
+                    "Target": "Friend Sock"
+                },
+                {
+                    "Text": "Return to kitchen",
+                    "Target": "Kitchen Floor"
+                }
+            ]
+        },
+        "Friend Sock": {
+            "Body": "Purple Socks",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the living room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Parents Bedroom": {
+            "Body": "At Parents bedroom",
+            "Choices": [
+                {
+                    "Text": "Examine the closet",
+                    "Target": "Parents Closet"
+                },
+                {
+                    "Text": "Check out letter on desk",
+                    "Target": "Dad Evidence"
+                },
+                {
+                    "Text": "Examine laundry basket",
+                    "Target": "Mom Sock"
+                },
+                {
+                    "Text": "Return to living room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Mom Sock": {
+            "Body": "Nice flower patterned sock",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the bedroom",
+                    "Target": "Parents Bedroom"
+                }
+            ]
+        },
+        "Dad Evidence": {
+            "Body": "INSERT STUFFF",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the bedroom",
+                    "Target": "Parents Bedroom"
+                }
+            ]
+        },
+        "Parents Closet": {
+            "Body": "PAREBT CKOSEfgruw",
+            "Choices": [
+                {
+                    "Text": "Squeeze behind drawer",
+                    "Target": "Mom Special Sock"
+                },
+                {
+                    "Text": "Wiggle into the other dusty drawer",
+                    "Target": "Dad Sock"
+                },
+                {
+                    "Text": "Leave the closet",
+                    "Target": "Parents Bedroom"
+                }
+            ]
+        },
+        "Dad Sock": {
+            "Body": "INSERT STUFFF",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the closet",
+                    "Target": "Parents Closet"
+                }
+            ]
+        },
+        "Mom Special Sock": {
+            "Body": "INSERT STUFFF",
+            "Choices": [
+                {
+                    "Text": "Continue exploring the closet",
+                    "Target": "Parents Closet"
+                }
+            ]
         }
     }
 }

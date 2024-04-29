@@ -4,7 +4,7 @@ An exercise in building data-driven game design
 
 ## Activity Instructions
 
-This activity gets you thinking about how to keep key aspects of your game design in data files (e.g. JSON files) rather than in code files (e.g. JavaScript files). We want to tell a simple choice-based story, but we don't want to have to create a new block of JavaScript for each location in our story world. We might want to have special logic for the start and end of the story, but most of the middle scenes of the story shoudl share the same logic. We'll put everything needed to customize different instances of this middle scene into a file called `myStory.json` and only make a edits to `rules.js`.
+This activity gets you thinking about how to keep key aspects of your game design in data files (e.g. JSON files) rather than in code files (e.g. JavaScript files). We want to tell a simple choice-based story, but we don't want to have to create a new block of JavaScript for each location in our story world. We might want to have special logic for the start and end of the story, but most of the middle scenes of the story should share the same logic. We'll put everything needed to customize different instances of this middle scene into a file called `myStory.json` and only make a edits to `rules.js`.
 
 ### Programming
 
